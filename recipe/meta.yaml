@@ -6,24 +6,24 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/jupyterlab_pioneer-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/jupyterlab_pioneer-{{ version }}.tar.gz
   sha256: 9d16308f45fb38decd8858e9e9202feac575677f64e80b03936efbd43d10ece0
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - hatchling >=1.5.0
     - jupyterlab >=4.0.0,<5
     - hatch-nodejs-version
     - hatch-jupyter-builder
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - jupyter_server >=2.0.1,<3
 
 test:
@@ -33,6 +33,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/educational-technology-collective/jupyterlab-pioneer
