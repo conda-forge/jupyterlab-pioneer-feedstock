@@ -1,5 +1,5 @@
 {% set name = "jupyterlab-pioneer" %}
-{% set version = "1.6.0" %}
+{% set version = "1.7.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/jupyterlab_pioneer-{{ version }}.tar.gz
-  sha256: 3ae51b6018abf9905d67b55e5574f5cddb3384fa7d077cb55c1a399fa4221f5a
+  sha256: 88ad0a08b61ef796931cccbbcbb5b854d5ce657cb47e1d1b586a93fcaf1ca157
 
 build:
   noarch: python
